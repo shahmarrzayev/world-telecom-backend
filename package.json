@@ -1,0 +1,65 @@
+{
+  "name": "world-telecom",
+  "version": "1.0.0",
+  "description": "world-telecom website",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint ./src",
+    "start": "node src/app.js",
+    "test": "jest --collect-coverage",
+    "start-local": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fdhuseynov/world-telecom.git"
+  },
+  "author": "Fuad Huseynov <fd.huseynov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fdhuseynov/world-telecom/issues"
+  },
+  "homepage": "https://github.com/fdhuseynov/world-telecom#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^7.1.0",
+    "app-root-path": "^3.0.0",
+    "argon2": "^0.25.1",
+    "aws-sdk": "^2.729.0",
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "convert-excel-to-json": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^4.1.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "lru-cache": "^6.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.10.9",
+    "multer": "^1.4.3",
+    "node-xlsx": "^0.15.1",
+    "object-hash": "^2.0.3",
+    "on-finished": "^2.3.0",
+    "querystring": "^0.2.0",
+    "queue": "^6.0.2",
+    "slugify": "^1.4.5",
+    "unique-random": "^2.1.0",
+    "winston": "^3.2.1",
+    "xlsx": "^0.17.3",
+    "xml2js": "^0.4.23",
+    "xmlbuilder": "^15.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^1.19.1"
+  }
+}
