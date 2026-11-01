@@ -7,7 +7,6 @@ const { getFromEnv } = require('../utils/commonUtils');
 
 const setupDbConnection = () => {
     return new Promise((resolve, reject) => {
-      
         let dbAddr = null;
         if (process.env.NODE_ENV === 'prod') {
             const certFile = `${appRoot}/w-t-do-mongo-ca-certificate.crt`;
@@ -34,10 +33,9 @@ const setupDbConnection = () => {
                 winston.info('Connected to DB...');
                 resolve();
             })
-            .catch((err) => {
-                winston.error(`Error connecting to db ${err}`)
-            })
-
+            .catch(err => {
+                winston.error(`Error connecting to db ${err}`);
+            });
     });
 };
 

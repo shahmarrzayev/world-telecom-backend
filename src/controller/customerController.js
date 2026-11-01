@@ -1,7 +1,17 @@
-const { validateChangePassword, validateSaveCustomer, validateUpdateCustomer } = require('./validator/customerValidator');
+const {
+    validateChangePassword,
+    validateSaveCustomer,
+    validateUpdateCustomer,
+} = require('./validator/customerValidator');
 const { BadRequestException } = require('../exceptions');
 
-const { changePassword, getCustomerOrders, modifyCustomer, registerCustomer, getCustomerById } = require('../service/customerService');
+const {
+    changePassword,
+    getCustomerOrders,
+    modifyCustomer,
+    registerCustomer,
+    getCustomerById,
+} = require('../service/customerService');
 const { mapCustomerEntityToPublicDto } = require('../mapper/customerMapper');
 const { mapOrderEntityToOrderView } = require('../mapper/orderMapper');
 
@@ -34,12 +44,12 @@ const registerCustomerController = async (req, res) => {
 const getCustomerInfoController = async (req, res) => {
     const customer = await getCustomerById(req.user._id);
     return res.send(mapCustomerEntityToPublicDto(customer));
-}
+};
 
 module.exports = {
     getCustomerOrdersController,
     changePasswordController,
     modifyCustomerController,
     registerCustomerController,
-    getCustomerInfoController
+    getCustomerInfoController,
 };

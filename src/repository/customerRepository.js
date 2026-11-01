@@ -23,7 +23,7 @@ const findCustomerByPhone = async (mobilePhone, transaction) => {
     const customer = await runQuery(() => Customer.findOne({ mobilePhone }).session(transaction));
     winston.debug('customerRepository.findCustomerByPhone -- success');
     return customer;
-}
+};
 
 const findCustomerById = async (id, transaction) => {
     if (!id) return null;
@@ -49,7 +49,7 @@ const updateCustomer = async (id, customer, transaction) => {
         winston.warn(`customerRepository.updateCustomer -- invalid args: ${id}, ${customer}`);
         return null;
     }
-    
+
     const savedNews = await runQuery(() =>
         Customer.findByIdAndUpdate(id, customer, {
             new: true,
@@ -57,7 +57,7 @@ const updateCustomer = async (id, customer, transaction) => {
             useFindAndModify: false,
         })
     );
-    
+
     winston.debug('customerRepository.updateCustomer -- success');
     return savedNews;
 };

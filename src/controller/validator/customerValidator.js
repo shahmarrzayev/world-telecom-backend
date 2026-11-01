@@ -67,7 +67,6 @@ const validateSaveCustomer = user => {
         gender: Joi.string()
             .valid(Object.values(Gender))
             .required(),
-
         birthDate: Joi.string()
             .optional()
             .allow(null, ''),
@@ -102,13 +101,11 @@ const validateUpdateCustomer = body => {
         lastName: Joi.string()
             .min(1)
             .max(256),
-        email: Joi.string()
-            .email(),
+        email: Joi.string().email(),
         mobilePhone: Joi.string()
             .min(10)
             .max(10),
-        gender: Joi.string()
-            .valid(Object.values(Gender)),
+        gender: Joi.string().valid(Object.values(Gender)),
         birthDate: Joi.string()
             .optional()
             .allow(null, ''),
@@ -122,17 +119,17 @@ const validateUpdateCustomer = body => {
         finCode: Joi.string()
             .optional()
             .allow(null, ''),
-    })
+    });
 
     if (error || (body.birthDate && !isValidDate(body.birthDate))) {
         return error && error.details && error.details.length ? error.details[0].message : 'Invalid request';
     }
     return null;
-}
+};
 
 module.exports = {
     validateAddAddress,
     validateChangePassword,
     validateSaveCustomer,
-    validateUpdateCustomer
+    validateUpdateCustomer,
 };

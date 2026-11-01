@@ -27,6 +27,7 @@ const app = express();
 
 configureCors(app);
 setupRoutes(app);
+
 setupDbConnection()
     .then(() => {
         setupCache();

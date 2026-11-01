@@ -42,7 +42,7 @@ const configureLogger = () => {
             })
         );
     } else {
-        winston.add(
+        winston.Container.add(
             new winston.transports.Console({
                 handleExceptions: true,
                 level: 'debug',
